@@ -1,0 +1,30 @@
+// Bootstrap and other libraries should be imported in vendor.scss in order to create a different chunk for caching purposes
+// If we import bootstrap here as well we would have duplicated css increasing the page loading time,
+// however, the variables scss is shared between the app and the libraries, therefore, you can use it to override variables like:
+// bootstrap $primary, $secondary, $grid-gutter-width, etc.
+@import "variables";
+
+// Imports required to use bootstrap variables that are not overridden by _variables.scss
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+.div-logo {
+  width: 100%;
+  height: 50px;
+  background-image: url("../img/webpack.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+body {
+  background: $secondary;
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
